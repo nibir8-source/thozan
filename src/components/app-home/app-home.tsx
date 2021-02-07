@@ -99,7 +99,7 @@ export class AppHome {
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="index.html">
-                            <img src="assets/img/logo.png" class="white-logo" alt="logo"/>
+                            <img src={this.ngo.logo.url} class="white-logo logo-image" alt="logo"/>
                             <img src="assets/img/logo-2.png" class="black-logo" alt="image"/>
                         </a>
 
@@ -138,7 +138,7 @@ export class AppHome {
                                     <a href="/assets/pages/projects.html" class="nav-link">
                                         <span>o3</span>
                                         Projects
-                                        <i class='bx bx-chevron-down'></i>
+                                        {/* <i class='bx bx-chevron-down'></i> */}
                                     </a>
                                 </li>
 
