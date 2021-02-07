@@ -2,17 +2,12 @@ import { Component, h, Prop }   from    '@stencil/core';
 import * as ngo                 from    '../../assets/thozhan.json';
   
 @Component({
-    tag                         :   'app-home',
+    tag                         :   'app-one',
 })
-export class AppHome {
+export class AppOne {
 
     @Prop() ngo                 :   any                 =   ngo;
-
-    private coverSlideOptions   :   any                 =   {
-        autoplay: {
-            delay: 4000
-        }
-    };
+    @Prop() project             :   number   = 0;
 
     constructor () {
         console.log('Home :: Constructor');
@@ -106,7 +101,7 @@ export class AppHome {
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="/" class="nav-link active">
+                                    <a href="/" class="nav-link">
                                         <span>o1</span>
                                         Home 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -135,10 +130,10 @@ export class AppHome {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="/assets/pages/projects.html" class="nav-link">
+                                    <a href="/assets/pages/projects.html" class="nav-link active">
                                         <span>o3</span>
                                         Projects
-                                        <i class='bx bx-chevron-down'></i>
+                                        {/* <i class='bx bx-chevron-down'></i> */}
                                     </a>
                                 </li>
 
@@ -330,203 +325,20 @@ export class AppHome {
         </div> 
         {/* <!-- End Sidebar Modal --> */}
 
-        {/* <!-- Start Home Banner Three Area --> */}
-        <ion-slides style={{ 'height': '100%' }} id='coverSlides' options={this.coverSlideOptions} >
-                        { this.ngo.photos.map(p => (
-                            <ion-slide>
-                                <img src={p} style={{ 'width': '100%', 'object-fit': 'cover' }} />
-                            </ion-slide>
-                        )) }
-
-        </ion-slides>
-        {/* <!-- End Home Banner Three Area --> */}
-
-        {/* <!-- Start Top Feature Area --> */}
         <section class="causes-section pt-100 pb-70">
             <div class="container">
                 <div class="section-title">
                     <span>
                         <i class="flaticon-ribbon"></i>
-                        Our Causes
+                        {this.ngo.projects[this.project].name}
                     </span>
-                    <h2>The causes we care about</h2>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    {this.ngo.sdg.map((goal) => (
-                    <div class="col-lg-4 col-md-6 col-sm-6 p-0">
-                        <div class="feature-card">
-                            <div class="goal-image">
-                                <img src={goal.photo.url} alt="image"/>
-                            </div>
-                            
-                            <h3>{goal.name}</h3>
-                            <p>{goal.description}</p>
-
-                            <a href={goal.link} class="feature-btn">
-                                See More +
-                            </a>
-                        </div>
-                    </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-        {/* <!-- End Top Feature Area --> */}
-        
-        <section class="solve-section pt-100 pb-70">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-md-4 col-md-offset-1">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12 text-center heading-section animate-box">
-                                <h3> Why Volunteer here? </h3>
-                            </div>
-                        </div>
-                        <br/>
-                        { this.ngo.whyVolunteerHere.map(w => (
-                            <div class="feature-text">
-                                <p>
-                                    <ion-icon name={ w.icon } style={{'margin-right': '8px'}}></ion-icon>
-                                    { w.text }
-                                </p>
-                            </div>
-                        )) }
-                    </div>
-
-                    <div class="col-md-4 col-md-offset-2">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12 text-center heading-section animate-box">
-                                <h3> Why your help matters? </h3>
-                            </div>
-                        </div>
-                        <br/>
-                        { this.ngo.whyHelpMatters.map(w => (
-                            <div class="feature-text">
-                                <p>
-                                    <ion-icon name={ w.icon } style={{'margin-right': '8px'}}></ion-icon>
-                                    { w.text }
-                                </p>
-                            </div>
-                        )) }
-                    </div>
-
+                    <h2>{this.ngo.projects[this.project].name}</h2>
+                    <p>{this.ngo.projects[this.project].description}</p>
                 </div>
             </div>
         </section>
 
-        {/*<!-- Start Donor Area --> */}
-        {/* <!-- End Donor Area -->
-
-        <!-- Start Solve Area --> */}
-        {/* <!-- End Solve Area -->
-
-        <!-- Start Mission Area --> */}
-        <section class="mission-section">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-6 p-0">
-                        <div>
-                            <img src={this.ngo.photos[0]} alt="image"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                            <div class="mission-tab">
-                                <span>
-                                    <i class="flaticon-target"></i>
-                                    Our Mission
-                                </span>
-                                <h2>Concern about Our Mission</h2>
-                                <div class="tab mission-list-tab">
-                                    <ul class="tabs">
-                                        <li>
-                                            <a href="#">
-                                                Our Mission
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Our Vision
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    
-                                    <div class="tab_content">
-                                        <div class="tabs_item">
-                                            <p>{this.ngo.mission}</p>  
-                                        </div>
-
-                                        <div class="tabs_item">
-                                            <p>{this.ngo.vision}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/* <!-- End Mission Area -->
-
-        
-
-        <!-- Start Events Area --> */}
-        {/* <!-- End Events Area -->
-
-        <!-- Start Testimonials Area --> */}
-        <section class="testimonials-section pt-140 pb-100">
-            <div class="container">
-                <div class="section-title">
-                    <span>
-                        <i class="flaticon-testimonial"></i>
-                        Testimonials
-                    </span>
-                    <h2>See Review</h2>
-                </div>
-                <div class="testimonials-slider owl-carousel owl-theme">
-                {this.ngo.review.map((volunteer) => (
-                    <div class="testimonials-item">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="testimonials-info">
-                                    <img src={volunteer.volunteer.photo.url} alt="image"/>
-                                    <h3>{volunteer.name}</h3>
-                                    <ul class="social-info">
-                                    {(function (rows, i, len) {
-                                        while (++i <= len) {
-                                        rows.push(<li><i class='bx bxs-star'></i></li>)
-                                        }
-                                        return rows;
-                                    })([], 0, volunteer.rating)}
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-9">
-                                <h3>Event Name : {volunteer.event.name}</h3>
-                                <p>{volunteer.feedback}</p>
-                            </div>
-                        </div>
-                    </div>
-                    ))}                
-                </div>
-            </div>
-
-            <div class="testimonials-shape">
-                <img src="assets/img/testimonials/shape.png" alt="image"/>
-            </div>
-        </section>
-        {/* <!-- End Testimonials Area -->
-
-        <!-- Start Donate Area --> */}
-        {/* <!-- End Donate Area -->
-
-        <!-- Start Blog Area --> */}
-        
-        {/* <!-- End Blog Area -->
-
-        <!-- Start Footer Area --> */}
+        {/* <!-- Start Footer Area --> */} 
         <footer class="footer-section pt-100">
             <div class="copyright-area">
                 <div class="container">

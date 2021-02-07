@@ -12,8 +12,18 @@ export namespace Components {
     interface AppHome {
         "ngo": any;
     }
-    interface AppProfile {
-        "name": string;
+    interface AppLegal {
+        "ngo": any;
+    }
+    interface AppOne {
+        "ngo": any;
+        "project": number;
+    }
+    interface AppPress {
+        "ngo": any;
+    }
+    interface AppProjects {
+        "ngo": any;
     }
     interface AppRoot {
     }
@@ -31,11 +41,29 @@ declare global {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
     };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
+    interface HTMLAppLegalElement extends Components.AppLegal, HTMLStencilElement {
     }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
+    var HTMLAppLegalElement: {
+        prototype: HTMLAppLegalElement;
+        new (): HTMLAppLegalElement;
+    };
+    interface HTMLAppOneElement extends Components.AppOne, HTMLStencilElement {
+    }
+    var HTMLAppOneElement: {
+        prototype: HTMLAppOneElement;
+        new (): HTMLAppOneElement;
+    };
+    interface HTMLAppPressElement extends Components.AppPress, HTMLStencilElement {
+    }
+    var HTMLAppPressElement: {
+        prototype: HTMLAppPressElement;
+        new (): HTMLAppPressElement;
+    };
+    interface HTMLAppProjectsElement extends Components.AppProjects, HTMLStencilElement {
+    }
+    var HTMLAppProjectsElement: {
+        prototype: HTMLAppProjectsElement;
+        new (): HTMLAppProjectsElement;
     };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
@@ -46,7 +74,10 @@ declare global {
     interface HTMLElementTagNameMap {
         "app-about": HTMLAppAboutElement;
         "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
+        "app-legal": HTMLAppLegalElement;
+        "app-one": HTMLAppOneElement;
+        "app-press": HTMLAppPressElement;
+        "app-projects": HTMLAppProjectsElement;
         "app-root": HTMLAppRootElement;
     }
 }
@@ -57,15 +88,28 @@ declare namespace LocalJSX {
     interface AppHome {
         "ngo"?: any;
     }
-    interface AppProfile {
-        "name"?: string;
+    interface AppLegal {
+        "ngo"?: any;
+    }
+    interface AppOne {
+        "ngo"?: any;
+        "project"?: number;
+    }
+    interface AppPress {
+        "ngo"?: any;
+    }
+    interface AppProjects {
+        "ngo"?: any;
     }
     interface AppRoot {
     }
     interface IntrinsicElements {
         "app-about": AppAbout;
         "app-home": AppHome;
-        "app-profile": AppProfile;
+        "app-legal": AppLegal;
+        "app-one": AppOne;
+        "app-press": AppPress;
+        "app-projects": AppProjects;
         "app-root": AppRoot;
     }
 }
@@ -75,7 +119,10 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-about": LocalJSX.AppAbout & JSXBase.HTMLAttributes<HTMLAppAboutElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+            "app-legal": LocalJSX.AppLegal & JSXBase.HTMLAttributes<HTMLAppLegalElement>;
+            "app-one": LocalJSX.AppOne & JSXBase.HTMLAttributes<HTMLAppOneElement>;
+            "app-press": LocalJSX.AppPress & JSXBase.HTMLAttributes<HTMLAppPressElement>;
+            "app-projects": LocalJSX.AppProjects & JSXBase.HTMLAttributes<HTMLAppProjectsElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
         }
     }

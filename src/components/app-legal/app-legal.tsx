@@ -2,9 +2,9 @@ import { Component, h, Prop }   from    '@stencil/core';
 import * as ngo                 from    '../../assets/thozhan.json';
   
  @Component({
-    tag                         :   'app-about',
+    tag                         :   'app-legal',
 })
-export class AppAbout {
+export class AppLegal {
 
     @Prop() ngo                 :   any                 =   ngo;
 
@@ -77,7 +77,7 @@ export class AppAbout {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="../pages/about.html" class="nav-link active">
+                                    <a href="../pages/about.html" class="nav-link">
                                         <span>o2</span>
                                         About Us
                                         <i class='bx bx-chevron-down'></i>
@@ -90,7 +90,7 @@ export class AppAbout {
                                         </li>
 
                                         <li class="nav-item">
-                                            <a href="legal.html" class="nav-link">
+                                            <a href="legal.html" class="nav-link active">
                                                 Legal
                                             </a>
                                         </li>
@@ -310,162 +310,52 @@ export class AppAbout {
                     </div>
                 </div>
             </div>
-            {/* <!-- End Page Title Area -->
+            {/* <!-- End Page Title Area -->*/}
 
-            <!-- Start About Area --> */}
-            <section class="about-section about-page pt-100 pb-100">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="about-item">
-                                <span>
-                                    <i class="flaticon-care-about-plants"></i>
-                                    About us
-                                </span>
-                                <h3>{this.ngo.name}</h3>
-                                <p> {this.ngo.description}</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="about-image">
-                                <img src={this.ngo.photos[0]} class="shadow about-page-img" alt="image"/>
-                                <img src={this.ngo.photos[1]} class="shadow" alt="image"/>
-                            </div>
-
-                            <div class="about-video">
-                                <a href={this.ngo.video.url} class="video-btn popup-youtube">
-                                    <i class="bx bx-play"></i>
-                                </a>
-                            </div>
-                        </div>
+            <section class="causes-section pt-100 pb-70">
+    
+                <div class="container-fluid">
+                    <div class="section-title">
+                        <span>
+                            <i class="flaticon-ribbon"></i>
+                            Legal
+                        </span>
+                        <h2>Transparency and Trust</h2>
+                        <h1>Legal Documents</h1>
                     </div>
                 </div>
-            </section>
-            {/* <!-- End About Area -->
+                
 
-            <!-- Start Mission Area --> */}
-            {/* <!-- End Mission Area -->  
+                    <div class="container">
 
-            <!-- Start Team Area --> */}
-            <section class="team-section pt-100 pb-70">
-                <div class="container">
-                    <div class="team-title-area">
-                        <div class="row align-items-center">
-                            <div class="col-lg-7">
-                                <div class="section-title text-left">
-                                    <span>
-                                        <i class="flaticon-support"></i>
-                                        Meet Our Team
-                                    </span>
-                                    <h2>Talented Team behind {this.ngo.name}</h2>
+
+                        <div class="row justify-content-center">
+
+                            <div class="col-lg-4 col-md-6 col-sm-6 p-0">
+                                <div class="feature-text">
+                                    <h3> Registration Deed </h3>
+                                    <p> Registration No: {this.ngo.legal.regNo} </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        {this.ngo.team.map((member) => (
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="team-item">
-                                <div class="image">
-                                    <img src={member.photo.url} class="member-image" alt="image"/>
-        
-                                    <ul class="social">
-                                        <li>
-                                            <a href={member.reachOut.facebook} target="_blank">
-                                                <i class="bx bxl-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href={member.reachOut.twitter} target="_blank">
-                                                <i class="bx bxl-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href={member.reachOut.linkedin} target="_blank">
-                                                <i class="bx bxl-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href={member.reachOut.instagram} target="_blank">
-                                                <i class="bx bxl-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-        
-                                <div class="content">
-                                    <h3>{member.name}</h3>
-                                    <span>{member.role}</span>
+                            <div class="col-lg-4 col-md-6 col-sm-6 p-0">
+                                <div class="feature-text">
+                                    <h3> Pan Card </h3>
+                                    <p> Pan No: {this.ngo.legal.panNo} </p>
                                 </div>
                             </div>
-                        </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 p-0">
+                                <div class="feature-text">
+                                    <h3> 12A Certificate </h3>
+                                    <p> Certificate No: SJSF830/2020 </p>
+                                </div>
+                            </div>
                         
-                        ))};
-                        
-                    </div>
-                </div>
-            </section>
-            {/* <!-- End Team Area -->
-
-            <!-- Start Instagram Area --> */}
-            <div class="instagram-area">
-                <div class="instagram-slides owl-carousel owl-theme">
-                    <div class="instagram-box">
-                        <img src={this.ngo.photos[0]} class="instagram-image" alt="image"/>
-
-                        <div class="icon">
-                            <i class="flaticon-instagram"></i>
                         </div>
 
-                        <a href="https://www.instagram.com/" target="_blank"></a>
                     </div>
-
-                    <div class="instagram-box">
-                        <img src={this.ngo.photos[1]} class="instagram-image" alt="image"/>
-
-                        <div class="icon">
-                            <i class="flaticon-instagram"></i>
-                        </div>
-
-                        <a href="https://www.instagram.com/" target="_blank"></a>
-                    </div>
-
-                    <div class="instagram-box">
-                        <img src={this.ngo.photos[2]} class="instagram-image" alt="image"/>
-
-                        <div class="icon">
-                            <i class="flaticon-instagram"></i>
-                        </div>
-
-                        <a href="https://www.instagram.com/" target="_blank"></a>
-                    </div>
-
-                    <div class="instagram-box">
-                        <img src="../img/instagram/4.jpg" alt="image"/>
-
-                        <div class="icon">
-                            <i class="flaticon-instagram"></i>
-                        </div>
-
-                        <a href="https://www.instagram.com/" target="_blank"></a>
-                    </div>
-
-                    <div class="instagram-box">
-                        <img src="../img/instagram/5.jpg" alt="image"/>
-
-                        <div class="icon">
-                            <i class="flaticon-instagram"></i>
-                        </div>
-
-                        <a href="https://www.instagram.com/" target="_blank"></a>
-                    </div>
-                </div>
-            </div>
-            {/* <!-- End Instagram Area -->
+                </section>
             
-            <!-- Start Footer Area --> */}
+            {/* <!-- Start Footer Area -->  */}
             <footer class="footer-section pt-100">
                 <div class="copyright-area">
                     <div class="container">
