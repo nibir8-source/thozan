@@ -94,7 +94,7 @@ export class AppOne {
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="index.html">
-                            <img src="assets/img/logo.png" class="white-logo" alt="logo"/>
+                            <img src={this.ngo.logo.url} class="white-logo logo-image" alt="logo"/>
                             <img src="assets/img/logo-2.png" class="black-logo" alt="image"/>
                         </a>
 
@@ -333,6 +333,8 @@ export class AppOne {
                         {this.ngo.projects[this.project].name}
                     </span>
                     <h2>{this.ngo.projects[this.project].name}</h2>
+                    <div><img src={this.ngo.projects[this.project].photo.url} class="project-page-image" alt="image"/></div>
+                    <br/>
                     <p>{this.ngo.projects[this.project].description}</p>
                 </div>
             </div>

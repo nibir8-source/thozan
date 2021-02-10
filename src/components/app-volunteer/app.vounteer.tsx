@@ -2,17 +2,11 @@ import { Component, h, Prop }   from    '@stencil/core';
 import * as ngo                 from    '../../assets/thozhan.json';
   
 @Component({
-    tag                         :   'app-projects',
+    tag                         :   'app-volunteer',
 })
-export class AppProjects {
+export class AppVolunteer {
 
     @Prop() ngo                 :   any                 =   ngo;
-
-    private coverSlideOptions   :   any                 =   {
-        autoplay: {
-            delay: 4000
-        }
-    };
 
     constructor () {
         console.log('Home :: Constructor');
@@ -34,7 +28,7 @@ export class AppProjects {
 
       
        <ion-content overflow-scroll="true">
-        {/* <!-- Start Preloader Area --> */}
+                {/* <!-- Start Preloader Area --> */}
         <div class="preloader">
             <div class="preloader">
                 <span></span>
@@ -135,7 +129,7 @@ export class AppProjects {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="projects.html" class="nav-link active">
+                                    <a href="projects.html" class="nav-link">
                                         <span>o3</span>
                                         Projects
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -151,7 +145,7 @@ export class AppProjects {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="volunteer.html" class="nav-link">
+                                    <a href="volunteer.html" class="nav-link active">
                                         <span>o5</span>
                                         Volunteer 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -329,63 +323,203 @@ export class AppProjects {
             </div>
         </div> 
         {/* <!-- End Sidebar Modal --> */}
-
-        <div class="page-title-area">
-                <div class="d-table">
-                    <div class="d-table-cell">
-                        <div class="container">
-                            {/* <div class="page-title-content">
-                                <h2>About</h2>
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li>About</li>
-                                </ul>
-                            </div> */}
+                {/* <!-- End Sidebar Modal -->
+                
+                <!-- Start Page Title Area --> */}
+                <div class="page-title-area">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="container">
+                                {/* <div class="page-title-content">
+                                    <h2>Contact</h2>
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li>Contact</li>
+                                    </ul>
+                                </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            {/* <!-- End Page Title Area -->*/}
+                {/* <!-- End Page Title Area -->
 
-            <section class="blog-section pt-100 pb-70">
-                <div class="container">
-                    <div class="section-title">
-                        <span>
-                            <i class="flaticon-book"></i>
-                            Our Blog
-                        </span>
-                        <h2>Check Out Our Latest News</h2>
-                    </div>
+                <!-- Start Contact Area --> */}
+                <section class="contact-section ptb-100">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                    <img src="/assets/img/we-make-a-living.jpg" style={{ 'width': '100%' }} />
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <h3 class="section-title">Why Volunteer?</h3>
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="feature-text">
+                                                    <h3> 1. It’s good for your health </h3>
+                                                    <p> No, we aren’t making this up. Studies have found that when you stop thinking about your own problems and focus on others, your stress levels start to decrease. </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="feature-text">
+                                                    <h3> 2. A learning road </h3>
+                                                    <p> Volunteers often discover their hidden talent and passion which directly improves their self-confidence. </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="feature-text">
+                                                    <h3> 3. You'll make meaningful connections </h3>
+                                                    <p> Volunteering lets you meet people from all walks of life. It gives you the chance to form relationships that can have a lasting impact on your life.  </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                            </div>
 
-                    <div class="row justify-content-center">
-                        {this.ngo.projects.map((project) => (
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-blog">
-                                    <img src={project.photo.url} class="project-image" alt="image"/>
+                            <div class="col-lg-8">
+                                <div class="contact-area">
+                                    <div class="contact-content">
+                                        <div class="col-lg-12">
+                                            <div class="send-btn">
+                                                <button type="submit" class="default-btn">
+                                                    Login With Gmail
+                                                    <i class="flaticon-right"></i>
+                                                    <span></span>
+                                                </button>
+                                            </div>
+                                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="contact-form">
+                                        <form id="contactForm">
+                                            <div class="row">
+                                            
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Mobile"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
 
-                                    <div class="content">
-                                        <a href="#">
-                                            <i class='bx bx-user'></i>
-                                        </a>
-                                        <span>{project.slug}</span>
-                                        <h3>
-                                            <a href="#">
-                                                {project.name}
-                                            </a>
-                                        </h3>
-                                        <a href={project.html} class="blog-btn">Read more +</a>
+                                                <div class="col-lg-6 col-md-6">
+                                                   
+                                                        <button type="submit" class="default-btn">
+                                                            Send OTP
+                                                            <i class="flaticon-right"></i>
+                                                            <span></span>
+                                                        </button>
+                                                    
+                                                </div>
+                
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="OTP"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-6 col-md-6">
+                                                    
+                                                        <button type="submit" class="default-btn">
+                                                            Verify OTP
+                                                            <i class="flaticon-right"></i>
+                                                            <span></span>
+                                                        </button>
+                                                    
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <br/>
+                                    <div class="contact-content">
+                                        <h3>Volunteer Details</h3>
+                                        
+                                    </div>
+
+                                    <div class="contact-form">
+                                        <form id="contactForm">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Name"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Email"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="State"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="msg_website" id="msg_website" class="form-control" required data-error="Please enter your website" placeholder="District"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Date Of Birth"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="msg_website" id="msg_website" class="form-control" required data-error="Please enter your website" placeholder="Profession"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <textarea name="message" class="form-control" id="message" required data-error="Write your message" placeholder="What am I joining?"></textarea>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="contact-content">
+                                        <div class="col-lg-12">
+                                            <div class="send-btn">
+                                                <button type="submit" class="default-btn">
+                                                    Donate
+                                                    <i class="flaticon-right"></i>
+                                                    <span></span>
+                                                </button>
+                                            </div>
+                                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                {/* <!-- End Contact Area -->
 
-        
+                <!-- Start Map Area --> */}
+                {/* <!-- End Map Area -->
 
-        {/* <!-- Start Footer Area --> */} 
-        <footer class="footer-section pt-100">
+                <!-- Start Footer Area --> */}
+                <footer class="footer-section pt-100">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4">
@@ -463,14 +597,14 @@ export class AppProjects {
                 </div>
             </div>
         </footer>
-        {/* <!-- End Footer Area -->
+                {/* <!-- End Footer Area -->
 
-        <!-- Start Go Top Section --> */}
-        <div class="go-top">
-            <i class="bx bx-chevron-up"></i>
-            <i class="bx bx-chevron-up"></i>
-        </div>
-        {/* <!-- End Go Top Section --> */}
+                <!-- Start Go Top Section --> */}
+                <div class="go-top">
+                    <i class="bx bx-chevron-up"></i>
+                    <i class="bx bx-chevron-up"></i>
+                </div>
+                {/* <!-- End Go Top Section --> */}
        </ion-content> 
       ];
     }

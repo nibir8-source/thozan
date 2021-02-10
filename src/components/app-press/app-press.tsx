@@ -62,8 +62,8 @@ export class AppPress {
                     <div class="container">
                         <nav class="navbar navbar-expand-md navbar-light">
                             <a class="navbar-brand" href="index.html">
-                                <img src="../img/logo-3.png" class="white-logo" alt="logo"/>
-                                <img src="../img/logo-2.png" class="black-logo" alt="image"/>
+                            <img src={this.ngo.logo.url} class="white-logo logo-image" alt="logo"/>
+                            <img src="assets/img/logo-2.png" class="black-logo" alt="image"/>
                             </a>
 
                             <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -98,7 +98,7 @@ export class AppPress {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="projects.html" class="nav-link">
                                         <span>o3</span>
                                         Projects
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -107,7 +107,7 @@ export class AppPress {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="donate.html" class="nav-link">
                                         <span>o4</span>
                                         Donate 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -115,7 +115,7 @@ export class AppPress {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="volunteer.html" class="nav-link">
                                         <span>o5</span>
                                         Volunteer 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -299,13 +299,13 @@ export class AppPress {
                 <div class="d-table">
                     <div class="d-table-cell">
                         <div class="container">
-                            <div class="page-title-content">
+                            {/* <div class="page-title-content">
                                 <h2>About</h2>
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li>About</li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -349,41 +349,83 @@ export class AppPress {
             
             {/* <!-- Start Footer Area -->  */}
             <footer class="footer-section pt-100">
-                <div class="copyright-area">
-                    <div class="container">
-                        <div class="copyright-area-content">
-                            <div class="row align-items-center">
-                                <div class="col-lg-4">
-                                    <div class="copyright-logo">
-                                        <img src="../img/white-logo.png" alt="image"/>
-                                    </div>
-                                </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="single-footer-widget">
+                            <h3>Contact info</h3>
 
-                                <div class="col-lg-4 col-md-6">
-                                    <p>
-                                        <i class="far fa-copyright"></i> 
-                                        2020 Huruma. All Rights Reserved by
-                                        <a href="https://envytheme.com/" target="_blank">
-                                            EnvyTheme
-                                        </a>
-                                    </p>
-                                </div>
+                            <div class="footer-info-contact">
+                                <i class="flaticon-pin"></i>
+                                <h3>Location</h3>
+                                <span>{this.ngo.address}</span>
+                            </div>
 
-                                <div class="col-lg-4 col-md-6">
-                                    <ul>
-                                        <li>
-                                            <a href="terms-condition.html">Terms & Conditions</a>
-                                        </li>
-                                        <li>
-                                            <a href="privacy-policy.html">Privacy Policy</a>
-                                        </li>
-                                    </ul>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="single-footer-widget">
+                        <div class="footer-info-contact">
+                            <i class="flaticon-call"></i>
+                            <h3>Call Us</h3>
+                            <span><a href="tel:+882-569-756">{this.ngo.reachOut.phone1}</a></span>
+                            <br/>
+                            <span><a href="tel:+882-569-756">{this.ngo.reachOut.phone2}</a></span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="single-footer-widget">
+                        <div class="footer-info-contact">
+                            <i class="flaticon-email"></i>
+                            <h3>Email Us</h3>
+                            <span>
+                                <a href="mailto:hello@huruma.com">
+                                    {this.ngo.reachOut.email}
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="copyright-area-content">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4">
+                                <div class="copyright-logo">
+                                    <img src={this.ngo.logo.url} class="logo-image" alt="image"/>
                                 </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+                                <p>
+                                    <i class="far fa-copyright"></i> 
+                                    2020 Huruma. All Rights Reserved by
+                                    <a href="https://envytheme.com/" target="_blank">
+                                        EnvyTheme
+                                    </a>
+                                </p>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+                                <ul>
+                                    <li>
+                                        <a href="terms-condition.html">Terms & Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-policy.html">Privacy Policy</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
             {/* <!-- End Footer Area -->
 
             <!-- Start Go Top Section --> */}

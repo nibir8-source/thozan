@@ -2,17 +2,11 @@ import { Component, h, Prop }   from    '@stencil/core';
 import * as ngo                 from    '../../assets/thozhan.json';
   
 @Component({
-    tag                         :   'app-projects',
+    tag                         :   'app-contact',
 })
-export class AppProjects {
+export class AppContact {
 
     @Prop() ngo                 :   any                 =   ngo;
-
-    private coverSlideOptions   :   any                 =   {
-        autoplay: {
-            delay: 4000
-        }
-    };
 
     constructor () {
         console.log('Home :: Constructor');
@@ -34,7 +28,7 @@ export class AppProjects {
 
       
        <ion-content overflow-scroll="true">
-        {/* <!-- Start Preloader Area --> */}
+                {/* <!-- Start Preloader Area --> */}
         <div class="preloader">
             <div class="preloader">
                 <span></span>
@@ -106,7 +100,7 @@ export class AppProjects {
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="../../" class="nav-link">
+                                    <a href="/" class="nav-link">
                                         <span>o1</span>
                                         Home 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -135,7 +129,7 @@ export class AppProjects {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="projects.html" class="nav-link active">
+                                    <a href="projects.html" class="nav-link">
                                         <span>o3</span>
                                         Projects
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -159,7 +153,7 @@ export class AppProjects {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="contact.html" class="nav-link active">
                                         <span>o6</span>
                                         Contact Us
                                     </a>
@@ -329,63 +323,134 @@ export class AppProjects {
             </div>
         </div> 
         {/* <!-- End Sidebar Modal --> */}
-
-        <div class="page-title-area">
-                <div class="d-table">
-                    <div class="d-table-cell">
-                        <div class="container">
-                            {/* <div class="page-title-content">
-                                <h2>About</h2>
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li>About</li>
-                                </ul>
-                            </div> */}
+                {/* <!-- End Sidebar Modal -->
+                
+                <!-- Start Page Title Area --> */}
+                <div class="page-title-area">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="container">
+                                {/* <div class="page-title-content">
+                                    <h2>Contact</h2>
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li>Contact</li>
+                                    </ul>
+                                </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            {/* <!-- End Page Title Area -->*/}
+                {/* <!-- End Page Title Area -->
 
-            <section class="blog-section pt-100 pb-70">
-                <div class="container">
-                    <div class="section-title">
-                        <span>
-                            <i class="flaticon-book"></i>
-                            Our Blog
-                        </span>
-                        <h2>Check Out Our Latest News</h2>
-                    </div>
+                <!-- Start Contact Area --> */}
+                <section class="contact-section ptb-100">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="contact-info-address">
+                                    <h3>Quick Contact </h3>
 
-                    <div class="row justify-content-center">
-                        {this.ngo.projects.map((project) => (
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-blog">
-                                    <img src={project.photo.url} class="project-image" alt="image"/>
+                                    <div class="info-contact">
+                                        <i class="flaticon-pin"></i>
+                                        <h3>Location</h3>
+                                        <span>{this.ngo.address}</span>
+                                    </div>
 
-                                    <div class="content">
-                                        <a href="#">
-                                            <i class='bx bx-user'></i>
-                                        </a>
-                                        <span>{project.slug}</span>
-                                        <h3>
-                                            <a href="#">
-                                                {project.name}
+                                    <div class="info-contact">
+                                        <i class="flaticon-call"></i>
+                                        <h3>Call Us</h3>
+                                        <span><a href="tel:+882-569-756">{this.ngo.reachOut.phone1}</a></span>
+                                        <br/>
+                                        <span><a href="tel:+882-569-756">{this.ngo.reachOut.phone2}</a></span>
+                                    </div>
+
+                                    <div class="info-contact">
+                                        <i class="flaticon-email"></i>
+                                        <h3>Email Us</h3>
+                                        <span>
+                                            <a href="mailto:hello@plamb.com">
+                                                {this.ngo.reachOut.email}
                                             </a>
-                                        </h3>
-                                        <a href={project.html} class="blog-btn">Read more +</a>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-                        ))}
+
+                            <div class="col-lg-8">
+                                <div class="contact-area">
+                                    <div class="contact-content">
+                                        <h3>Let’s talk!</h3>
+                                        
+                                    </div>
+
+                                    <div class="contact-form">
+                                        <form id="contactForm">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Name"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Phone"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="email"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="msg_website" id="msg_website" class="form-control" required data-error="Please enter your website" placeholder="Website"/>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <textarea name="message" class="form-control" id="message" required data-error="Write your message" placeholder="Write Something"></textarea>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <div class="send-btn">
+                                                        <button type="submit" class="default-btn">
+                                                            Contact us
+                                                            <i class="flaticon-right"></i>
+                                                            <span></span>
+                                                        </button>
+                                                    </div>
+                                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </section>
+                {/* <!-- End Contact Area -->
+
+                <!-- Start Map Area --> */}
+                <div class="map-section">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.9776606913047!2d80.18950631482271!3d13.037093890812978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266d4377f9d27%3A0xd881baee6613b9e6!2sThozhan%20Trust!5e0!3m2!1sen!2sin!4v1612864428731!5m2!1sen!2sin"></iframe>
                 </div>
-            </section>
+                {/* <!-- End Map Area -->
 
-        
-
-        {/* <!-- Start Footer Area --> */} 
-        <footer class="footer-section pt-100">
+                <!-- Start Footer Area --> */}
+               <footer class="footer-section pt-100">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4">
@@ -463,14 +528,14 @@ export class AppProjects {
                 </div>
             </div>
         </footer>
-        {/* <!-- End Footer Area -->
+                {/* <!-- End Footer Area -->
 
-        <!-- Start Go Top Section --> */}
-        <div class="go-top">
-            <i class="bx bx-chevron-up"></i>
-            <i class="bx bx-chevron-up"></i>
-        </div>
-        {/* <!-- End Go Top Section --> */}
+                <!-- Start Go Top Section --> */}
+                <div class="go-top">
+                    <i class="bx bx-chevron-up"></i>
+                    <i class="bx bx-chevron-up"></i>
+                </div>
+                {/* <!-- End Go Top Section --> */}
        </ion-content> 
       ];
     }

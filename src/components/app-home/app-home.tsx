@@ -42,7 +42,7 @@ export class AppHome {
             </div>
         </div>
         {/* <!-- End Preloader Area --> */}
-
+        
         {/* <!-- Start Header Area --> */}
           <div class="header-section">
             <div class="container">
@@ -143,7 +143,7 @@ export class AppHome {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="/assets/pages/donate.html" class="nav-link">
                                         <span>o4</span>
                                         Donate 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -151,7 +151,7 @@ export class AppHome {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="/assets/pages/volunteer.html" class="nav-link">
                                         <span>o5</span>
                                         Volunteer 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -159,7 +159,7 @@ export class AppHome {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="/assets/pages/contact.html" class="nav-link">
                                         <span>o6</span>
                                         Contact Us
                                     </a>
@@ -222,7 +222,7 @@ export class AppHome {
             </div>
         </div> 
         {/* <!-- End Navbar Area --> */}
-
+        
         {/* <!-- Sidebar Modal --> */}
          <div class="sidebar-modal">
             <div class="sidebar-modal-inner">
@@ -331,6 +331,32 @@ export class AppHome {
         {/* <!-- End Sidebar Modal --> */}
 
         {/* <!-- Start Home Banner Three Area --> */}
+        {/* <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img class="d-block w-100" src="..." alt="First slide"/>
+            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="..." alt="Second slide"/>
+            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="..." alt="Third slide"/>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        </div> */}
         <ion-slides style={{ 'height': '100%' }} id='coverSlides' options={this.coverSlideOptions} >
                         { this.ngo.photos.map(p => (
                             <ion-slide>
@@ -364,9 +390,9 @@ export class AppHome {
                             <h3>{goal.name}</h3>
                             <p>{goal.description}</p>
 
-                            <a href={goal.link} class="feature-btn">
+                            {/* <a href={goal.link} class="feature-btn">
                                 See More +
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                     ))}
@@ -374,44 +400,56 @@ export class AppHome {
             </div>
         </section>
         {/* <!-- End Top Feature Area --> */}
+        <section class="donor-section pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Your Help Matters</h2>
+                </div>
+
+                <div class="row">
+                    {this.ngo.whyHelpMatters.map((value) => (
+                    <div class="col-lg-4 col-md-6">
+                        <div class="donor-item">
+                            <div class="icon">
+                                <i class="flaticon-support"></i>
+                            </div>
+                            <p>{value.text}</p>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+            </div>
+
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </section>
         
+
         <section class="solve-section pt-100 pb-70">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-md-4 col-md-offset-1">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12 text-center heading-section animate-box">
-                                <h3> Why Volunteer here? </h3>
-                            </div>
-                        </div>
-                        <br/>
-                        { this.ngo.whyVolunteerHere.map(w => (
-                            <div class="feature-text">
-                                <p>
-                                    <ion-icon name={ w.icon } style={{'margin-right': '8px'}}></ion-icon>
-                                    { w.text }
-                                </p>
-                            </div>
-                        )) }
-                    </div>
+            <div class="container">
+                <div class="section-title">
+                    <span>
+                        <i class="flaticon-to-do-list"></i>
+                        What We Do
+                    </span>
+                    <h2>Our Activities</h2>
+                </div>
 
-                    <div class="col-md-4 col-md-offset-2">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12 text-center heading-section animate-box">
-                                <h3> Why your help matters? </h3>
+                <div class="row">
+                    {this.ngo.activities.map((activity) => (
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="solve-item">
+                            <div class="icon">
+                                <img src="assets/img/solve/1.png" alt="image"/>
                             </div>
+                            <h3>{activity}</h3>
+                            {/* <p>Roknin sanso dolor sit amet consecteturadipisicingitsed do eiusmod tempor.</p> */}
                         </div>
-                        <br/>
-                        { this.ngo.whyHelpMatters.map(w => (
-                            <div class="feature-text">
-                                <p>
-                                    <ion-icon name={ w.icon } style={{'margin-right': '8px'}}></ion-icon>
-                                    { w.text }
-                                </p>
-                            </div>
-                        )) }
                     </div>
-
+                    ))}
                 </div>
             </div>
         </section>
@@ -468,11 +506,78 @@ export class AppHome {
                 </div>
             </div>
         </section>
-        {/* <!-- End Mission Area -->
+        {/* <!-- End Mission Area -->*/}
 
-        
+        <section class="blog-section pt-100 pb-70">
+                <div class="container">
+                    <div class="section-title">
+                        <span>
+                            <i class="flaticon-book"></i>
+                            Projects
+                        </span>
+                        <h2>Check Out The Projects That we Have Done</h2>
+                    </div>
 
-        <!-- Start Events Area --> */}
+                    <div class="row justify-content-center">
+                        {this.ngo.projects.slice(0,3).map((project) => (
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="single-blog">
+                                    <img src={project.photo.url} class="project-image" alt="image"/>
+
+                                    <div class="content">
+                                        <a href="#">
+                                            <i class='bx bx-user'></i>
+                                        </a>
+                                        <span>{project.slug}</span>
+                                        <h3>
+                                            <a href="#">
+                                                {project.name}
+                                            </a>
+                                        </h3>
+                                        <a href={project.html} class="blog-btn">Read more +</a>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div class="section-title">
+                        <span>
+                            <i class="flaticon-book"></i>
+                            <a href="/assets/pages/projects.html"> See More +</a>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+        {/*<!-- Start Events Area --> */}
+
+        <section class="donor-section pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Volunteer Here</h2>
+                </div>
+
+                <div class="row">
+                    {this.ngo.whyVolunteerHere.map((value) => (
+                    <div class="col-lg-4 col-md-6">
+                        <div class="donor-item">
+                            <div class="icon">
+                                <i class="flaticon-support"></i>
+                            </div>
+                            <p>{value.text}</p>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+            </div>
+
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </section>
+
         {/* <!-- End Events Area -->
 
         <!-- Start Testimonials Area --> */}
@@ -528,13 +633,55 @@ export class AppHome {
 
         <!-- Start Footer Area --> */}
         <footer class="footer-section pt-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="single-footer-widget">
+                            <h3>Contact info</h3>
+
+                            <div class="footer-info-contact">
+                                <i class="flaticon-pin"></i>
+                                <h3>Location</h3>
+                                <span>{this.ngo.address}</span>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="single-footer-widget">
+                        <div class="footer-info-contact">
+                            <i class="flaticon-call"></i>
+                            <h3>Call Us</h3>
+                            <span><a href="tel:+882-569-756">{this.ngo.reachOut.phone1}</a></span>
+                            <br/>
+                            <span><a href="tel:+882-569-756">{this.ngo.reachOut.phone2}</a></span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="single-footer-widget">
+                        <div class="footer-info-contact">
+                            <i class="flaticon-email"></i>
+                            <h3>Email Us</h3>
+                            <span>
+                                <a href="mailto:hello@huruma.com">
+                                    {this.ngo.reachOut.email}
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="copyright-area">
                 <div class="container">
                     <div class="copyright-area-content">
                         <div class="row align-items-center">
                             <div class="col-lg-4">
                                 <div class="copyright-logo">
-                                    <img src="assets/img/white-logo.png" alt="image"/>
+                                    <img src={this.ngo.logo.url} class="logo-image" alt="image"/>
                                 </div>
                             </div>
 
