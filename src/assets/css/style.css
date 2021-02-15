@@ -62,18 +62,23 @@ Default CSS
 @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap");
 
 
+.activity__header{
+  height: 48px;
+}
+
 .project-page-image{
   width: 800px !important;
-  height: 600px !important;
+  object-fit: contain;
 }
 
 .logo-image{
   width: 150px !important;
   height: 150px !important;
+  object-fit: contain;
 }
 
 .project-image{
-  object-fit: cover !important;
+  object-fit: contain !important;
 }
 
 .press-image{

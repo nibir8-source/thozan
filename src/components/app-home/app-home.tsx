@@ -58,21 +58,25 @@ export class AppHome {
                     <div class="col-lg-6">
                         <div class="top-header-social">
                             <span>Follow us:</span>
+                            { this.ngo.reachOut.facebook.length > 0 ?
                             <a href={this.ngo.reachOut.facebook} target="_blank">
                                 <i class='flaticon-facebook'></i>
-                            </a>
+                            </a>: null }
 
+                            { this.ngo.reachOut.twitter.length > 0 ?
                             <a href={this.ngo.reachOut.twitter} target="_blank">
                                 <i class='flaticon-twitter'></i>
-                            </a>
+                            </a>: null }
 
+                            { this.ngo.reachOut.instagram.length > 0 ?
                             <a href={this.ngo.reachOut.instagram} target="_blank">
                                 <i class='flaticon-instagram'></i>
-                            </a>
+                            </a>: null }
 
+                            { this.ngo.reachOut.linkedin.length > 0 ?
                             <a href={this.ngo.reachOut.linkedin} target="_blank">
                                 <i class='flaticon-linkedin'></i>
-                            </a>
+                            </a>: null }
                         </div>
                     </div>
                 </div>
@@ -87,8 +91,8 @@ export class AppHome {
                     <div class="huruma-responsive-menu">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="assets/img/logo.png" class="white-logo" alt="logo"/>
-                                <img src="assets/img/logo-2.png" class="black-logo" alt="image"/>
+                                {/* <img src="assets/img/logo.png" class="white-logo" alt="logo"/> */}
+                                {/* <img src="assets/img/logo-2.png" class="black-logo" alt="image"/> */}
                             </a>
                         </div>
                     </div>
@@ -167,51 +171,6 @@ export class AppHome {
                             </ul>
 
                             <div class="others-options">
-                                <div class="dropdown language-switcher d-inline-block">
-                                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="assets/img/flag/france-flag.jpg" class="shadow" alt="image"/>
-                                        <span>Eng <i class='bx bx-chevron-down'></i></span>
-                                    </button>
-
-                                    <div class="dropdown-menu">
-                                        <a href="#" class="dropdown-item d-flex align-items-center">
-                                            <img src="assets/img/flag/germany-flag.jpg" class="shadow-sm" alt="flag"/>
-                                            <span>Ger</span>
-                                        </a>
-                                        <a href="#" class="dropdown-item d-flex align-items-center">
-                                            <img src="assets/img/flag/italy-flag.jpg" class="shadow-sm" alt="flag"/>
-                                            <span>Fre</span>
-                                        </a>
-                                        <a href="#" class="dropdown-item d-flex align-items-center">
-                                            <img src="assets/img/flag/spain-flag.jpg" class="shadow-sm" alt="flag"/>
-                                            <span>Spa</span>
-                                        </a>
-                                        <a href="#" class="dropdown-item d-flex align-items-center">
-                                            <img src="assets/img/flag/russia-flag.jpg" class="shadow-sm" alt="flag"/>
-                                            <span>Rus</span>
-                                        </a>
-                                        <a href="#" class="dropdown-item d-flex align-items-center">
-                                            <img src="assets/img/flag/us-flag.jpg" class="shadow-sm" alt="flag"/>
-                                            <span>Ita</span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="option-item"><i class="search-btn bx bx-search"></i>
-                                    <i class="close-btn bx bx-x"></i>
-                                    <div class="search-overlay search-popup">
-                                        <div class='search-box'>
-                                            <form class="search-form">
-                                                <input class="search-input" name="search" placeholder="Search" type="text"/>
-
-                                                <button class="search-button" type="submit">
-                                                    <i class="bx bx-search"></i>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="burger-menu">
                                     <i class="flaticon-menu"></i>
                                 </div>
@@ -331,32 +290,7 @@ export class AppHome {
         {/* <!-- End Sidebar Modal --> */}
 
         {/* <!-- Start Home Banner Three Area --> */}
-        {/* <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img class="d-block w-100" src="..." alt="First slide"/>
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="..." alt="Second slide"/>
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="..." alt="Third slide"/>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        </div> */}
+        
         <ion-slides style={{ 'height': '100%' }} id='coverSlides' options={this.coverSlideOptions} >
                         { this.ngo.photos.map(p => (
                             <ion-slide>
@@ -413,6 +347,7 @@ export class AppHome {
                             <div class="icon">
                                 <i class="flaticon-support"></i>
                             </div>
+                            {/* <h3>Select Position</h3> */}
                             <p>{value.text}</p>
                         </div>
                     </div>
@@ -445,7 +380,7 @@ export class AppHome {
                             <div class="icon">
                                 <img src="assets/img/solve/1.png" alt="image"/>
                             </div>
-                            <h3>{activity}</h3>
+                            <h3 class="activity__header">{activity}</h3>
                             {/* <p>Roknin sanso dolor sit amet consecteturadipisicingitsed do eiusmod tempor.</p> */}
                         </div>
                     </div>
@@ -528,7 +463,7 @@ export class AppHome {
                                         <a href="#">
                                             <i class='bx bx-user'></i>
                                         </a>
-                                        <span>{project.slug}</span>
+                                        {/* <span>{project.slug}</span> */}
                                         <h3>
                                             <a href="#">
                                                 {project.name}

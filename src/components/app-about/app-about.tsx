@@ -44,32 +44,32 @@ export class AppAbout {
             {/* <!-- End Header Area -->
 
             <!-- Start Navbar Area --> */}
-            <div class="navbar-area  navbar-style-three">
-                <div class="huruma-responsive-nav">
-                    <div class="container">
-                        <div class="huruma-responsive-menu">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="../img/logo-3.png" class="white-logo" alt="logo"/>
-                                    <img src="../img/logo-2.png" class="black-logo" alt="image"/>
-                                </a>
-                            </div>
+             <div class="navbar-area fixed-top">
+            <div class="huruma-responsive-nav">
+                <div class="container">
+                    <div class="huruma-responsive-menu">
+                        <div class="logo">
+                            <a href="index.html">
+                                {/* <img src="assets/img/logo.png" class="white-logo" alt="logo"/> */}
+                                {/* <img src="assets/img/logo-2.png" class="black-logo" alt="image"/> */}
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="huruma-nav">
-                    <div class="container">
-                        <nav class="navbar navbar-expand-md navbar-light">
-                            <a class="navbar-brand" href="index.html">
+            <div class="huruma-nav">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="index.html">
                             <img src={this.ngo.logo.url} class="white-logo logo-image" alt="logo"/>
                             <img src="assets/img/logo-2.png" class="black-logo" alt="image"/>
-                            </a>
+                        </a>
 
-                            <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="../../" class="nav-link">
+                                    <a href="/" class="nav-link active">
                                         <span>o1</span>
                                         Home 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -77,20 +77,20 @@ export class AppAbout {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="about.html" class="nav-link active">
+                                    <a href="/assets/pages/about.html" class="nav-link">
                                         <span>o2</span>
                                         About Us
                                         <i class='bx bx-chevron-down'></i>
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="press-coverage.html" class="nav-link">
+                                            <a href="/assets/pages/press-coverage.html" class="nav-link">
                                                 Press Coverage
                                             </a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a href="legal.html" class="nav-link">
+                                            <a href="/assets/pages/legal.html" class="nav-link">
                                                 Legal
                                             </a>
                                         </li>
@@ -98,16 +98,15 @@ export class AppAbout {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="projects.html" class="nav-link">
+                                    <a href="/assets/pages/projects.html" class="nav-link">
                                         <span>o3</span>
                                         Projects
                                         {/* <i class='bx bx-chevron-down'></i> */}
                                     </a>
-                                    
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="donate.html" class="nav-link">
+                                    <a href="/assets/pages/donate.html" class="nav-link">
                                         <span>o4</span>
                                         Donate 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -115,7 +114,7 @@ export class AppAbout {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="volunteer.html" class="nav-link">
+                                    <a href="/assets/pages/volunteer.html" class="nav-link">
                                         <span>o5</span>
                                         Volunteer 
                                         {/* <i class='bx bx-chevron-down'></i> */}
@@ -123,68 +122,23 @@ export class AppAbout {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="/assets/pages/contact.html" class="nav-link">
                                         <span>o6</span>
                                         Contact Us
                                     </a>
                                 </li>
                             </ul>
 
-                                <div class="others-options">
-                                    <div class="dropdown language-switcher d-inline-block">
-                                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="../img/flag/france-flag.jpg" class="shadow" alt="image"/>
-                                            <span>Eng <i class='bx bx-chevron-down'></i></span>
-                                        </button>
-
-                                        <div class="dropdown-menu">
-                                            <a href="#" class="dropdown-item d-flex align-items-center">
-                                                <img src="../img/flag/germany-flag.jpg" class="shadow-sm" alt="flag"/>
-                                                <span>Ger</span>
-                                            </a>
-                                            <a href="#" class="dropdown-item d-flex align-items-center">
-                                                <img src="../img/flag/italy-flag.jpg" class="shadow-sm" alt="flag"/>
-                                                <span>Fre</span>
-                                            </a>
-                                            <a href="#" class="dropdown-item d-flex align-items-center">
-                                                <img src="../img/flag/spain-flag.jpg" class="shadow-sm" alt="flag"/>
-                                                <span>Spa</span>
-                                            </a>
-                                            <a href="#" class="dropdown-item d-flex align-items-center">
-                                                <img src="../img/flag/russia-flag.jpg" class="shadow-sm" alt="flag"/>
-                                                <span>Rus</span>
-                                            </a>
-                                            <a href="#" class="dropdown-item d-flex align-items-center">
-                                                <img src="../img/flag/us-flag.jpg" class="shadow-sm" alt="flag"/>
-                                                <span>Ita</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="option-item"><i class="search-btn bx bx-search"></i>
-                                        <i class="close-btn bx bx-x"></i>
-                                        <div class="search-overlay search-popup">
-                                            <div class='search-box'>
-                                                <form class="search-form">
-                                                    <input class="search-input" name="search" placeholder="Search" type="text"/>
-
-                                                    <button class="search-button" type="submit">
-                                                        <i class="bx bx-search"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="burger-menu">
-                                        <i class="flaticon-menu"></i>
-                                    </div>
+                            <div class="others-options">
+                                <div class="burger-menu">
+                                    <i class="flaticon-menu"></i>
                                 </div>
                             </div>
-                        </nav>
-                    </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
+        </div> 
             {/* <!-- End Navbar Area -->
 
             <!-- Sidebar Modal --> */}
